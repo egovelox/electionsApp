@@ -1,5 +1,6 @@
 package fr.mrichard.elections.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +10,16 @@ import fr.mrichard.elections.entity.Bureau;
 
 
 public class BureauDAO {
+
+
+    private Connection connection;
+
+    private static String SELECT_ALL = "SELECT * FROM bureau";
+
+
+    public BureauDAO(Connection connection) {
+        this.connection = connection;
+    }
 
     public List<Bureau> selectAll() {
 
