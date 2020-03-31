@@ -14,7 +14,7 @@ public class AccessBase {
 
     private AccessBase(){
         
-    };
+    }
 
     //Constructeur en mode Singleton
     private AccessBase(String propsFilePath) {
@@ -42,7 +42,13 @@ public class AccessBase {
             connection = DriverManager.getConnection(URL, USER, PWD);
             connection.setAutoCommit(false);
 
-        } catch (ClassNotFoundException | IOException | SQLException e) {
+        } catch (ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+        catch(IOException e){
+            System.err.println(e.getMessage());
+        }
+        catch(SQLException e){
             System.err.println(e.getMessage());
         }
     }

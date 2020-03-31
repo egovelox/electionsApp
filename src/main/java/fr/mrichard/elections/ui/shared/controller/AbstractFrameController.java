@@ -7,7 +7,9 @@ public abstract class AbstractFrameController {
 
     public abstract void prepareAndOpenFrame();
 
-    protected void registerAction(JButton button, ActionListener listener) {
+    public abstract JInternalFrame prepareAndReturnFrame();
+
+    protected void registerAction(AbstractButton button, ActionListener listener) {
         button.addActionListener(listener);
     }
 }
