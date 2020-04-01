@@ -7,7 +7,6 @@ import java.util.List;
 public abstract class DefaultTableModel<T> extends AbstractTableModel {
 
     protected List<T> entities = new ArrayList<T>();
-
     public abstract String[] getColumnLabels();
 
     @Override
@@ -29,7 +28,7 @@ public abstract class DefaultTableModel<T> extends AbstractTableModel {
     }
 
     public void addEntities(List<T> entities) {
-        this.entities.addAll(entities);
+        entities.addAll(entities);
         fireTableDataChanged();
     }
 

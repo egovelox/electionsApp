@@ -14,19 +14,19 @@ public class BureauDAO {
 
     private Connection connection;
 
-    private static String SELECT_ALL = "SELECT * FROM bureau";
+    private static String JTABLE_SELECT_ALL = "SELECT idbureau, codebureau, adressebureau, lieubureau, inscrits, idarrondissement FROM bureau";
 
 
     public BureauDAO(Connection connection) {
         this.connection = connection;
     }
 
-    public List<Bureau> selectAll() {
+    public List<Bureau> jTableSelectAll() {
 
         List<Bureau> list = new ArrayList<Bureau>();
         PreparedStatement prepSt8;
         ResultSet resultSet;
-        String query = SELECT_ALL;
+        String query = JTABLE_SELECT_ALL;
 
         try {
             prepSt8 = connection.prepareStatement(query);
@@ -39,11 +39,8 @@ public class BureauDAO {
                 object.setAdressebureau(resultSet.getString("adressebureau"));
                 object.setLieubureau(resultSet.getString("lieubureau"));
                 object.setInscrits(resultSet.getInt("inscrits"));
-                object.setVotants(resultSet.getInt("votants"));
-                object.setExprimes(resultSet.getInt("exprimes"));
-                object.setNuls(resultSet.getInt("nuls"));
-                object.setProcurations(resultSet.getInt("procurations"));
                 object.setIdarrondissement(resultSet.getInt("idarrondissement"));
+                object.setFlag("");
                 list.add(object);
             } /// while
 

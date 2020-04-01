@@ -18,7 +18,18 @@ public interface ConstMessagesEN {
             String MAIN_WINDOW = "Elections";
             String MENU_TABLES = "Tables";
             String BUREAU_TABLE = "Bureaux";
-
+            String FLAG = "statut";
+            String ID = "ID";
+            String BUREAU_CODE = "Bureaux";
+            String BUREAU_LOCATION = "Bureaux";
+            String BUREAU_ADDRESS = "Bureaux";
+            String BUREAU_INSCRITS = "Bureaux";
+            String BUREAU_ID_ARRONDISSEMENT = "Bureaux";
+            String CANCEL_BTN = "Bureaux";
+            String ADD_BTN = "Bureaux";
+            String REMOVE_BTN = "Bureaux";
+            String MODIFY_BTN = "Bureaux";
+            String VALIDATE_BTN = "Bureaux";
         }
 
         interface ValidationMessages {

@@ -11,13 +11,14 @@ public class Bureau {
     private int exprimes;
     private int procurations;
     private int idarrondissement;
+    private String flag;
 
 
     public Bureau() {
     }
 
     // FULL CSTRCTOR
-    public Bureau(int idbureau, String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int presidentbureau, int idarrondissement) {
+    public Bureau(int idbureau, String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int idarrondissement, String flag ) {
         this.idbureau = idbureau;
         this.codebureau = codebureau;
         this.lieubureau = lieubureau;
@@ -28,10 +29,11 @@ public class Bureau {
         this.exprimes = exprimes;
         this.procurations = procurations;
         this.idarrondissement = idarrondissement;
+        this.flag = flag;
     }
 
     // WITHOUD ID PROP
-    public Bureau(String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int presidentbureau, int idarrondissement) {
+    public Bureau(String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int presidentbureau, int idarrondissement, String flag) {
         this.codebureau = codebureau;
         this.lieubureau = lieubureau;
         this.adressebureau = adressebureau;
@@ -41,6 +43,16 @@ public class Bureau {
         this.exprimes = exprimes;
         this.procurations = procurations;
         this.idarrondissement = idarrondissement;
+        this.flag = flag;
+    }
+
+    // New Bureau from JTable
+    public Bureau(String flag){
+        this.flag = flag;
+        this.lieubureau = "edit";
+        this.adressebureau = "edit";
+        this.codebureau = "edit";
+        this.inscrits = 0;
     }
 
     public void setIdbureau(int idbureau) {
@@ -83,6 +95,8 @@ public class Bureau {
         this.idarrondissement = idarrondissement;
     }
 
+    public void setFlag(String flag) {this.flag = flag; }
+
     public int getIdbureau() {
         return idbureau;
     }
@@ -123,8 +137,10 @@ public class Bureau {
         return idarrondissement;
     }
 
+    public String getFlag() {return flag; }
+
     @Override
     public String toString() {
-        return "Bureau{" + "idbureau=" + idbureau + ", codebureau=" + codebureau + ", lieubureau=" + lieubureau + ", adressebureau=" + adressebureau + ", inscrits=" + inscrits + ", votants=" + votants + ", nuls=" + nuls + ", exprimes=" + exprimes + ", procurations=" + procurations + ", idarrondissement=" + idarrondissement + '}';
+        return "Bureau{" + "idbureau=" + idbureau + ", codebureau=" + codebureau + ", lieubureau=" + lieubureau + ", adressebureau=" + adressebureau + ", inscrits=" + inscrits + ", votants=" + votants + ", nuls=" + nuls + ", exprimes=" + exprimes + ", procurations=" + procurations + ", idarrondissement=" + idarrondissement + ", flag=" + flag + '}';
     }
 }
