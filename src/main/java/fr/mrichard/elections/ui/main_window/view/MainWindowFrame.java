@@ -32,7 +32,7 @@ public class MainWindowFrame extends JFrame {
 
         JMenuBar menuBar = new JMenuBar();
         JMenu menuTables = new JMenu(ConstMessagesEN.Labels.MENU_TABLES);
-        bureauMenu = new JMenuItem(ConstMessagesEN.Labels.BUREAU_TABLE);
+        bureauMenu = new JMenuItem(ConstMessagesEN.Labels.MENU_ITEM_BUREAU_TABLE);
 
         menuTables.add(bureauMenu);
         menuBar.add(menuTables);

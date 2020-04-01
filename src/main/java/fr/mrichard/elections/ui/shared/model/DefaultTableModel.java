@@ -28,7 +28,7 @@ public abstract class DefaultTableModel<T> extends AbstractTableModel {
     }
 
     public void addEntities(List<T> entities) {
-        entities.addAll(entities);
+        this.entities.addAll(entities);
         fireTableDataChanged();
     }
 

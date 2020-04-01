@@ -24,7 +24,7 @@ public class BureauController extends AbstractFrameController{
         bureauTableModel = new BureauTableModel();
         // on passe le model à la frame qui le passera au tablePanel
         bureauTableFrame = new BureauTableFrame(bureauTableModel);
-        connection = AccessBase.getInstance("");
+        connection = AccessBase.getInstance("javaelections.properties");
         bureauDAO = new BureauDAO(connection);
     }
 
@@ -42,6 +42,7 @@ public class BureauController extends AbstractFrameController{
     @Override
     public JInternalFrame prepareAndReturnFrame() {
         loadBureaux();
+        prepareListeners();
         showBureauFrame();
         return bureauTableFrame;
     }

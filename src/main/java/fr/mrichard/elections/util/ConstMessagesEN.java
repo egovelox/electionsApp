@@ -17,7 +17,8 @@ public interface ConstMessagesEN {
         interface Labels {
             String MAIN_WINDOW = "Elections";
             String MENU_TABLES = "Tables";
-            String BUREAU_TABLE = "Bureaux";
+            String MENU_ITEM_BUREAU_TABLE = "Bureaux";
+            String BUREAU_FRAME = "Bureaux";
             String FLAG = "statut";
             String ID = "ID";
             String BUREAU_CODE = "Bureaux";

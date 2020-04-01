@@ -9,7 +9,7 @@ public class BureauTablePanel extends JPanel{
 
     private BureauTableModel tableModel;
 
-    private JTable table;
+    private JTable bureauTable;
 
     public BureauTablePanel(BureauTableModel tableModel){
         this.tableModel = tableModel;
@@ -18,8 +18,11 @@ public class BureauTablePanel extends JPanel{
     }
 
     private void initComponents() {
-        table = new JTable(tableModel);
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        bureauTable = new JTable(tableModel);
+        bureauTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        JScrollPane paneWithTable = new JScrollPane(bureauTable);
+        add(paneWithTable, BorderLayout.CENTER);
     }
 
     private void setPanelUp() {
