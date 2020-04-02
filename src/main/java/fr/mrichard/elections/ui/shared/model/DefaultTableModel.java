@@ -42,7 +42,7 @@ public abstract class DefaultTableModel<T> extends AbstractTableModel {
 
     public void removeRow(int row) {
         entities.remove(row);
-        // fireTableDataChanged();
+        fireTableDataChanged();
     }
 
     public void clear() {

@@ -12,11 +12,7 @@ public class AccessBase {
     //Attributs
     private static Connection connection;
 
-    private AccessBase(){
-        
-    }
-
-    //Constructeur en mode Singleton
+    // Singleton constructor, see getInstance() too.
     private AccessBase(String propsFilePath) {
 
         try {

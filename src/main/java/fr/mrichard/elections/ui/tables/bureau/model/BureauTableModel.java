@@ -1,10 +1,8 @@
 package fr.mrichard.elections.ui.tables.bureau.model;
 
 import fr.mrichard.elections.entity.Bureau;
-
 import fr.mrichard.elections.ui.shared.model.DefaultTableModel;
 import fr.mrichard.elections.util.ConstMessagesEN;
-
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import java.util.List;
@@ -38,8 +36,9 @@ public class BureauTableModel extends DefaultTableModel<Bureau> implements Table
 
     @Override
     public void removeEntity(int selectedRow) {
+        // the row was added by the user, so just remove it.
         if(entities.get(selectedRow).getFlag().compareTo("+") == 0){ entities.remove(selectedRow); }
-        // the row was not added by the user, just tag it with "-".
+        // the row was NOT added by the user, so just tag it with "-".
         else setValueAt("-", selectedRow, 0);
         fireTableDataChanged();
     }
@@ -80,8 +79,8 @@ public class BureauTableModel extends DefaultTableModel<Bureau> implements Table
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 
-        //When the user has edited a cell, we need first to flag with "m".
-        //Via the event handler tableChanged() below.
+        // The user has edited a cell, let's flag it here with "m"
+        // via the event handler tableChanged() below.
         fireTableCellUpdated(rowIndex, columnIndex);
 
         // And ONLY THEN we save in entities.
@@ -111,7 +110,7 @@ public class BureauTableModel extends DefaultTableModel<Bureau> implements Table
     }
 
     @Override
-    // this handler handles all sorts of fired TableModelEvents
+    // this method handles all sorts of fired TableModelEvents
     public void tableChanged(TableModelEvent e) {
         int row = e.getLastRow();
         // the row is NOT one of those added by the user.

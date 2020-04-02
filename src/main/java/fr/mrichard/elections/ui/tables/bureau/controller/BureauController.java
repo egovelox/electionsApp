@@ -26,9 +26,17 @@ public class BureauController extends AbstractFrameController{
         connection = AccessBase.getInstance("javaelections.properties");
         bureauDAO = new BureauDAO(connection);
         bureauTableModel = new BureauTableModel();
+        // fill the model with data
         loadBureaux();
-        // on passe le model à la frame qui le passera à la JTable
+        // pass the model to the corresponding frame
         bureauTableFrame = new BureauTableFrame(bureauTableModel);
+    }
+
+    @Override
+    public JInternalFrame prepareAndReturnFrame() {
+        prepareListeners();
+        showBureauFrame();
+        return bureauTableFrame;
     }
 
     private void prepareListeners(){
@@ -37,33 +45,9 @@ public class BureauController extends AbstractFrameController{
         registerAction(tableBtnPanel.getRemoveBtn(), (e) -> removeBureau());
         registerAction(tableBtnPanel.getCancelBtn(), (e) -> resetTable());
         registerAction(tableBtnPanel.getValidateBtn(), (e) -> validateTable());
-
-        /*registerTableAction(bureauTableModel, (e) -> {
-            System.out.println(e);
-            //modifyBureau();
-        });*/
     }
 
-    private void validateTable(){
-        listeBureaux = bureauTableModel.getEntities();
-        int res = bureauDAO.jTableInsertAll(listeBureaux);
-        System.out.println(res);
-        bureauTableModel.clear();
-        loadBureaux();
-    }
-
-    @Override
-    public JInternalFrame prepareAndReturnFrame() {
-        //loadBureaux();
-        prepareListeners();
-        showBureauFrame();
-        return bureauTableFrame;
-    }
-
-    private void loadBureaux(){
-        listeBureaux = bureauDAO.jTableSelectAll();
-        bureauTableModel.addEntities(listeBureaux);
-    }
+    private void showBureauFrame(){bureauTableFrame.setVisible(true);}
 
     private void resetTable(){
         bureauTableModel.clear();
@@ -76,7 +60,6 @@ public class BureauController extends AbstractFrameController{
         JTable bureauTable = bureauTableFrame.getTablePanel().getBureauTable();
         bureauTable.scrollRectToVisible(
                 new Rectangle(bureauTable.getCellRect(bureauTable.getRowCount()-1, 0, true)));
-        //System.out.println(bureauTableModel.getEntities());
     }
 
     private void removeBureau(){
@@ -86,7 +69,18 @@ public class BureauController extends AbstractFrameController{
         else {System.out.println("sélectionnez une ligne");}
     }
 
-    private void showBureauFrame(){bureauTableFrame.setVisible(true);}
+    private void validateTable(){
+        listeBureaux = bureauTableModel.getEntities();
+        int res = bureauDAO.jTableInsertAll(listeBureaux);
+        System.out.println(res);
+        bureauTableModel.clear();
+        loadBureaux();
+    }
+
+    private void loadBureaux(){
+        listeBureaux = bureauDAO.jTableSelectAll();
+        bureauTableModel.addEntities(listeBureaux);
+    }
 
     @Override
     public void prepareAndOpenFrame() {

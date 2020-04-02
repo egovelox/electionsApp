@@ -1,7 +1,6 @@
 package fr.mrichard.elections.ui.tables.bureau.view;
 
 import fr.mrichard.elections.util.ConstMessagesEN;
-
 import javax.swing.*;
 
 public class BureauTableBtnPanel extends JPanel {

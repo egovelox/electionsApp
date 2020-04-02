@@ -2,14 +2,13 @@ package fr.mrichard.elections.ui.tables.bureau.view;
 
 import fr.mrichard.elections.ui.tables.bureau.model.BureauTableModel;
 import fr.mrichard.elections.util.ConstMessagesEN;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class BureauTableFrame extends JInternalFrame {
 
-    private static final int DEFAULT_WIDTH = 700;
-    private static final int DEFAULT_HEIGHT = 500;
+    private static final int DEFAULT_WIDTH = 900;
+    private static final int DEFAULT_HEIGHT = 700;
 
     private BureauTablePanel tablePanel;
     private BureauTableBtnPanel tableBtnPanel;
