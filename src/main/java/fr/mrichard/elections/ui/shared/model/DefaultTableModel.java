@@ -7,7 +7,9 @@ import java.util.List;
 public abstract class DefaultTableModel<T> extends AbstractTableModel {
 
     protected List<T> entities = new ArrayList<T>();
+    protected int initialTableSize;
     public abstract String[] getColumnLabels();
+    public abstract void removeEntity(int selectedRow);
 
     @Override
     public String getColumnName(int column) {
@@ -24,12 +26,14 @@ public abstract class DefaultTableModel<T> extends AbstractTableModel {
 
     public void addEntity(T entity) {
         entities.add(entity);
-        fireTableDataChanged();
+        fireTableRowsInserted(entities.size() -1, entities.size() -1);
+        //No need for now: to display and update entities, but bug to focus.
     }
 
     public void addEntities(List<T> entities) {
         this.entities.addAll(entities);
-        fireTableDataChanged();
+        initialTableSize = entities.size();
+        fireTableRowsInserted(0, initialTableSize - 1);
     }
 
     public T getEntityByRow(int rowIndex) {
@@ -38,11 +42,15 @@ public abstract class DefaultTableModel<T> extends AbstractTableModel {
 
     public void removeRow(int row) {
         entities.remove(row);
-        fireTableDataChanged();
+        // fireTableDataChanged();
     }
 
     public void clear() {
         entities.clear();
+    }
+
+    public List<T> getEntities(){
+        return entities;
     }
 
 }

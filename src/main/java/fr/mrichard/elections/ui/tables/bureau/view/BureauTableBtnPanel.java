@@ -8,7 +8,6 @@ public class BureauTableBtnPanel extends JPanel {
 
     private JButton addBtn;
     private JButton removeBtn;
-    private JButton modBtn;
     private JButton cancelBtn;
     private JButton validateBtn;
 
@@ -23,14 +22,11 @@ public class BureauTableBtnPanel extends JPanel {
         removeBtn = new JButton(ConstMessagesEN.Labels.REMOVE_BTN);
         add(removeBtn);
 
-        modBtn = new JButton(ConstMessagesEN.Labels.MODIFY_BTN);
-        add(modBtn);
-
         cancelBtn = new JButton(ConstMessagesEN.Labels.CANCEL_BTN);
         add(cancelBtn);
 
         validateBtn = new JButton(ConstMessagesEN.Labels.VALIDATE_BTN);
-        add(cancelBtn);
+        add(validateBtn);
     }
 
     public JButton getAddBtn() {
@@ -39,10 +35,6 @@ public class BureauTableBtnPanel extends JPanel {
 
     public JButton getRemoveBtn() {
         return removeBtn;
-    }
-
-    public JButton getModBtn() {
-        return modBtn;
     }
 
     public JButton getCancelBtn() {

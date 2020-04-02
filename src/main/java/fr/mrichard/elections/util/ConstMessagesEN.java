@@ -21,16 +21,16 @@ public interface ConstMessagesEN {
             String BUREAU_FRAME = "Bureaux";
             String FLAG = "statut";
             String ID = "ID";
-            String BUREAU_CODE = "Bureaux";
-            String BUREAU_LOCATION = "Bureaux";
-            String BUREAU_ADDRESS = "Bureaux";
-            String BUREAU_INSCRITS = "Bureaux";
-            String BUREAU_ID_ARRONDISSEMENT = "Bureaux";
-            String CANCEL_BTN = "Bureaux";
-            String ADD_BTN = "Bureaux";
-            String REMOVE_BTN = "Bureaux";
-            String MODIFY_BTN = "Bureaux";
-            String VALIDATE_BTN = "Bureaux";
+            String BUREAU_CODE = "Code";
+            String BUREAU_LOCATION = "Lieu";
+            String BUREAU_ADDRESS = "Adresse";
+            String BUREAU_INSCRITS = "Inscrits";
+            String BUREAU_ID_ARRONDISSEMENT = "Arrond.";
+            String BUREAU_ID_CIRCONSCRIPTION = "Circons.";
+            String CANCEL_BTN = "Annuler";
+            String ADD_BTN = "Ajouter";
+            String REMOVE_BTN = "Enlever";
+            String VALIDATE_BTN = "Valider";
         }
 
         interface ValidationMessages {

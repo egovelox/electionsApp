@@ -8,8 +8,8 @@ import java.awt.*;
 
 public class BureauTableFrame extends JInternalFrame {
 
-    private static final int DEFAULT_WIDTH = 500;
-    private static final int DEFAULT_HEIGHT = 300;
+    private static final int DEFAULT_WIDTH = 700;
+    private static final int DEFAULT_HEIGHT = 500;
 
     private BureauTablePanel tablePanel;
     private BureauTableBtnPanel tableBtnPanel;

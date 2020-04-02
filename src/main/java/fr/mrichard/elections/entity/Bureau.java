@@ -11,6 +11,7 @@ public class Bureau {
     private int exprimes;
     private int procurations;
     private int idarrondissement;
+    private int idcirconscription;
     private String flag;
 
 
@@ -18,7 +19,7 @@ public class Bureau {
     }
 
     // FULL CSTRCTOR
-    public Bureau(int idbureau, String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int idarrondissement, String flag ) {
+    public Bureau(int idbureau, String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int idarrondissement, int idcirconscription, String flag ) {
         this.idbureau = idbureau;
         this.codebureau = codebureau;
         this.lieubureau = lieubureau;
@@ -29,11 +30,20 @@ public class Bureau {
         this.exprimes = exprimes;
         this.procurations = procurations;
         this.idarrondissement = idarrondissement;
+        this.idcirconscription = idcirconscription;
         this.flag = flag;
     }
 
+    public int getIdcirconscription() {
+        return idcirconscription;
+    }
+
+    public void setIdcirconscription(int idcirconscription) {
+        this.idcirconscription = idcirconscription;
+    }
+
     // WITHOUD ID PROP
-    public Bureau(String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int presidentbureau, int idarrondissement, String flag) {
+    public Bureau(String codebureau, String lieubureau, String adressebureau, int inscrits, int votants, int nuls, int exprimes, int procurations, int idarrondissement, int idcirconscription, String flag) {
         this.codebureau = codebureau;
         this.lieubureau = lieubureau;
         this.adressebureau = adressebureau;
@@ -43,6 +53,7 @@ public class Bureau {
         this.exprimes = exprimes;
         this.procurations = procurations;
         this.idarrondissement = idarrondissement;
+        this.idcirconscription = idcirconscription;
         this.flag = flag;
     }
 
@@ -52,7 +63,6 @@ public class Bureau {
         this.lieubureau = "edit";
         this.adressebureau = "edit";
         this.codebureau = "edit";
-        this.inscrits = 0;
     }
 
     public void setIdbureau(int idbureau) {
